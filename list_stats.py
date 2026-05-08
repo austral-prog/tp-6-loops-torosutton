@@ -1,5 +1,3 @@
-# ---- Funciones provistas (NO modificar) ----
-
 def find_min(numbers):
     """Dada una lista de numeros, retorna el menor valor."""
     minimum = numbers[0]
@@ -26,7 +24,8 @@ def range_of(numbers):
 
     Ejemplo: range_of([3, 1, 7, 2]) -> 6  (7 - 1)
     """
-    return "ANSWER HERE"  # Remove this line and implement
+    dif=find_max(numbers)-find_min(numbers)
+    return dif
 
 
 def average(numbers):
@@ -37,7 +36,16 @@ def average(numbers):
 
     Ejemplo: average([10, 20, 30]) -> 20.0
     """
-    return "ANSWER HERE"  # Remove this line and implement
+    if len(numbers)==0:
+        return 0.0
+
+    numeros=0
+    for i in numbers:
+        numeros += i
+    promedio = numeros / len(numbers)
+    return round(promedio, 1)
+
+
 
 
 def describe(numbers):
@@ -50,4 +58,9 @@ def describe(numbers):
 
     Ejemplo: describe([3, 1, 7, 2]) -> "Min:1 Max:7 Range:6 Avg:3.2"
     """
-    return "ANSWER HERE"  # Remove this line and implement
+    if len(numbers) ==0:
+        return "Empty list"
+
+    else:
+        string=(f"Min:{find_min(numbers)} Max:{find_max(numbers)} Range:{range_of(numbers)} Avg:{average(numbers)}")
+        return string

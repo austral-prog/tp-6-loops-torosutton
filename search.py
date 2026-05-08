@@ -1,5 +1,3 @@
-# Replace the "ANSWER HERE" for your answer
-
 def index_of(target, lst):
     """
     Retorna el indice de la primera ocurrencia de target en lst.
@@ -7,7 +5,10 @@ def index_of(target, lst):
 
     Ejemplo: index_of("Black", ["Red", "Green", "Black"]) -> 2
     """
-    return "ANSWER HERE"  # Remove this line and implement
+    for i in range(len(lst)):
+        if target.lower() ==lst[i].lower():
+            return i
+    return -1
 
 
 def index_of_by_index(target, lst, start):
@@ -18,7 +19,20 @@ def index_of_by_index(target, lst, start):
 
     Ejemplo: index_of_by_index("Black", ["Red", "Black", "Green", "Black"], 2) -> 3
     """
-    return "ANSWER HERE"  # Remove this line and implement
+    for i in range(len(lst)):
+            if i<start:
+                continue
+            if target.lower() == lst[i].lower():
+                return i
+
+    return -1
+
+
+
+
+
+
+
 
 
 def index_of_empty(lst):
@@ -28,4 +42,7 @@ def index_of_empty(lst):
 
     Ejemplo: index_of_empty(["Red", "", "Green"]) -> 1
     """
-    return "ANSWER HERE"  # Remove this line and implement
+    for i in range(len(lst)):
+        if lst[i] == "":
+            return i
+    else:return -1
